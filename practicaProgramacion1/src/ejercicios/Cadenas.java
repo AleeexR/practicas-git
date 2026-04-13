@@ -240,9 +240,11 @@ public static void main(String[] args) {
 	
 	*/
 	
+	/* Ejercicio 22
+	
 	public static void main(String[] args) {
 		
-		String cadena = "Paletas";
+		String cadena = "casos";
 		System.out.println(sinRepetidos(cadena));
 	}
 	
@@ -250,19 +252,179 @@ public static void main(String[] args) {
 		
 		String nvaCadena = "";
 		
+		int cont = 0;
+		
 		for (int i = 0; i < s.length(); i++){
 			
-			//Este es un comentario de prueba para el commit
+			if (!tieneRepetidos(s, s.charAt(i))) {
+				
+				nvaCadena = nvaCadena + s.charAt(i);
+				
+			} else {
+				
+				cont += 1;
+				
+			}
 			
-			//Este es otro comentario de prueba
+			// PARA EVITAR ESCRIBIR LA SEGUNDA LETRA REPETIDA
 			
-			//Este es un tercer comentario de prueba
-		}
+			if (cont == 1 && !tieneRepetidos(nvaCadena + s.charAt(i), s.charAt(i))) {
+				
+				nvaCadena = nvaCadena + s.charAt(i);
+				
+				cont = 0;
+				
+			}
+
+			
+			
+/*			// PARA EVITAR ESCRIBIR LA PRIMERA LETRA REPETIDA
+			
+			if (cont == 2 && !tieneRepetidos(nvaCadena, s.charAt(i))) {
+				
+				nvaCadena = nvaCadena + s.charAt(i);
+				
+				cont = 0;
+				
+			}
 		
-		return s;
+*/			
+
+/*	
+	
+		}	
+		
+		return nvaCadena;
 	}
 	
+	public static boolean tieneRepetidos(String palabra, char letra) {
+		
+		int cont = 0;
+		
+		for (int i = 0; i < palabra.length(); i++) {
+			
+			if (palabra.charAt(i) == letra) {
+				
+				cont = cont + 1;
+				
+			}
+			
+		}
+		
+		if (cont > 1) {
+			
+			return true;
+			
+		}
+		
+		return false;
+	}
+	
+	*/
+	
+	public static void main(String[] args) {
+		
+		String a = "JUGO";
+		String b = "BUENO";
+		String c = "ANANA";
+		
+		System.out.println(puedenColocarse(a, b, c));
+
+		
+	}
+	
+	public static boolean puedenColocarse(String a, String b, String c) {
+
+		if (b.length() < 3) {
+			
+			return false;
+			
+		}
+
+		if (!(coincideAlMenosUna(b, a) && coincideAlMenosUna(b, c))) {
+			
+			return false;
+			
+		}
+			
+		if (posicionQueCoinciden(b, a) + 1 == posicionQueCoinciden(b, c) || posicionQueCoinciden(b, a) >= posicionQueCoinciden(b, c)) {
+				
+			return false;
+			
+		}
+		
+		return true;
+	}
+	
+	public static boolean coincideAlMenosUna(String s, String z) {
+		
+		for (int i = 0; i < s.length(); i++) {
+			
+			for (int j = 0; j < z.length(); j++) {
+				
+				if (s.charAt(i) == z.charAt(j)) {
+					
+					return true;
+					
+				}
+				
+			}
+			
+		}
+		
+		return false;
+	}
+	
+	public static int posicionQueCoinciden(String s, String z) {
+		
+		int posicion = 0;
+		
+		for (int i = 0; i < s.length(); i++) {
+			
+			for (int j = 0; j < z.length(); j++) {
+				
+				if (s.charAt(i) == z.charAt(j)) {
+					
+					posicion = s.indexOf(s.charAt(i));
+					
+					return posicion;
+					
+				}
+				
+			}
+			
+		}
+		
+		return 0;
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

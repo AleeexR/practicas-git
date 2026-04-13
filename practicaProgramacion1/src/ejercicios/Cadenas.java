@@ -322,6 +322,8 @@ public static void main(String[] args) {
 	
 	*/
 	
+	/* Ejercicio 23
+	
 	public static void main(String[] args) {
 		
 		String a = "JUGO";
@@ -396,6 +398,25 @@ public static void main(String[] args) {
 		}
 		
 		return 0;
+	}
+	
+	*/
+	
+	/*Ejercicio 24*/
+	
+	public static void main(String[] args) {
+		
+		String palabra = "neuquenoro";
+		
+		System.out.println(esDoblete(palabra));
+		
+	}
+	
+	static boolean esDoblete(String s) {
+		
+		
+		
+		return false;
 	}
 	
 }

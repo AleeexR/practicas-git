@@ -402,7 +402,7 @@ public static void main(String[] args) {
 	
 	*/
 	
-	/*Ejercicio 24*/
+	/*Ejercicio 24 INCOMPLETO
 	
 	public static void main(String[] args) {
 		
@@ -418,6 +418,8 @@ public static void main(String[] args) {
 		
 		return false;
 	}
+	
+	*/
 	
 }
 
